@@ -1,0 +1,22 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-provider-hystrix-payment
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #mysql5.x的没有cj
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #记得先创建数据库
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: abc123
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
